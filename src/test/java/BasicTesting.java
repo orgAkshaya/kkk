@@ -36,19 +36,14 @@ public void lno() {
 	System.out.println(table_row.size());
 	List<WebElement> table_col=driver.findElements(By.xpath("//table[@class='dataTable']/tbody/tr/td"));
 	System.out.println(table_col.size());
-	for(int i=1;i<=table_row.size();i++) {
-		for(int j=1;j<=table_col.size();j++) {
-			String va="//table[@class='dataTable']/tbody/tr["+i+"]/td["+j+"]";
-			//System.out.println(va);
-			System.out.println(driver.findElement(By.xpath(va)).getText());
-		}
+	
 	}
 }
 
 
 
 	
-}
+
 
 	
 	
