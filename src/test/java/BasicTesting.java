@@ -1,44 +1,54 @@
-import java.io.FileNotFoundException;
-import java.util.LinkedHashMap;
-import java.util.Map.Entry;
-import java.util.*;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.Set;
 
-public class BasicTesting {
-	
-	
-		
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
-	public static void main(String[] args) throws FileNotFoundException   {
-		
-//		WebDriver w=new ChromeDriver();
-//		
-//	WebDriverWait  k=new WebDriverWait(w, 30);
-//	k.until(ExpectedConditions.presenceOfElementLocated(null))
-//		w.get("https://money.rediff.com/gainers");
-//		int r=w.findElements(By.xpath("//table[@class='dataTable']/tbody/tr")).size();
-//		int c=w.findElements(By.xpath("//table[@class='dataTable']/tbody/tr[1]/td")).size();
-//		for(int i=2;i<=r;i++) {
-//			for(int j=1;j<=c;j++) {
-//				String x="//table[@class='dataTable']/tbody/tr["+i+"]/td["+j+"]";
-//				String y=w.findElement(By.xpath(x)).getTagName();
-//				System.out.println(y);
-//			}
-//		}
-//		try {
-//			w.switchTo().alert();
-//		}catch(StaleElementReferenceException e) {
-//			
-//		}
-		
-		Map<String,String> hm=new LinkedHashMap<String,String>();
-		hm.put("name", "null");
-		
-		Set<String> o=hm.keySet();
-		for(String u:o) {
-			System.out.println(u+" "+hm.get(u));
+import groovyjarjarpicocli.CommandLine.Parameters;
+/*find maximjum diference between two element 
+ * Any two element in the array*/
+public class BasicTesting   {
+
+
+
+@Test()
+public void lno() {
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://money.rediff.com/gainers");
+	List<WebElement> table_row=driver.findElements(By.xpath("//table[@class='dataTable']/tbody/tr"));
+	System.out.println(table_row.size());
+	List<WebElement> table_col=driver.findElements(By.xpath("//table[@class='dataTable']/tbody/tr/td"));
+	System.out.println(table_col.size());
+	for(int i=1;i<=table_row.size();i++) {
+		for(int j=1;j<=table_col.size();j++) {
+			String va="//table[@class='dataTable']/tbody/tr["+i+"]/td["+j+"]";
+			//System.out.println(va);
+			System.out.println(driver.findElement(By.xpath(va)).getText());
 		}
-	
 	}
+}
+
+
+
+	
+}
 
 	
 	
@@ -49,4 +59,4 @@ public class BasicTesting {
 
 	
 
-}
+
