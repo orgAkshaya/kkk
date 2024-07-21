@@ -35,7 +35,7 @@ public void lno() {
 	List<WebElement> table_row=driver.findElements(By.xpath("//table[@class='dataTable']/tbody/tr"));
 	System.out.println(table_row.size());
 	List<WebElement> table_col=driver.findElements(By.xpath("//table[@class='dataTable']/tbody/tr/td"));
-	System.out.println(table_col.size());
+	
 	
 	
 	}
