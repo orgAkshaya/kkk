@@ -35,6 +35,7 @@ for (int i=1;i<r;i++) {
 		System.out.println(y);
 	}
 }
+System.out.println("**************");
 }
 
 
