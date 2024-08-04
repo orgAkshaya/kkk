@@ -5,7 +5,7 @@
     <classes>
       <class name="BasicTesting">
         <methods>
-          <include name="lno"/>
+          <include name="show"/>
         </methods>
       </class> <!-- BasicTesting -->
     </classes>
